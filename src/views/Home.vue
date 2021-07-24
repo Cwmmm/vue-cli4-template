@@ -1,18 +1,32 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div class="container">
+    <button @click="sendReq('get')">发送get请求</button>
+    <button @click="sendReq('post')">发送post请求</button>
+    <button @click="sendReq('put')">发送put请求</button>
+    <button @click="sendReq('delete')">发送delete请求</button>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
 export default {
-  name: "Home",
-  components: {
-    HelloWorld,
+  methods: {
+    sendReq(param) {
+      this.$api[`${param}Req`]().then((res) => {
+        console.log(res);
+      });
+    },
   },
 };
 </script>
+
+<style lang="less" scoped>
+.container {
+  background-color: @main-bg-color;
+  .flexBoxFunc(space-around;space-around);
+  flex-direction: column;
+  position: fixed;
+  width: 200px;
+  height: 200px;
+  .positionCenter();
+}
+</style>
