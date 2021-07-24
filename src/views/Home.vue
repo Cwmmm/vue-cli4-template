@@ -11,7 +11,9 @@
 export default {
   methods: {
     sendReq(param) {
-      this.$api[`${param}Req`]().then((res) => {
+      this.$api[`${param}Req`]({
+        test: "1",
+      }).then((res) => {
         console.log(res);
       });
     },

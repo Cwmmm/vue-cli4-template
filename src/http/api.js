@@ -1,11 +1,13 @@
 import instance from "./http";
 
 export default {
-  getReq: () => {
-    return instance.get("getReq");
+  getReq: (params) => {
+    return instance.get("getReq", {
+      params,
+    });
   },
-  postReq: () => {
-    return instance.post("postReq");
+  postReq: (data) => {
+    return instance.post("postReq", data);
   },
   putReq: () => {
     return instance.put("putReq");

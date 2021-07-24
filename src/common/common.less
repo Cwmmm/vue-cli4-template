@@ -3,12 +3,15 @@
 @main-bg-color:#eee;
 @border-color:#666;
 
-
 //混入
 .flexBox {
   display: flex;
 }
-
+.positionCenter() {
+  left: 50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+}
 //函数
 .flexBoxFunc(@xAxis:center; @yAxis:center) {
   .flexBox();
@@ -16,9 +19,5 @@
   align-items: @yAxis;
 }
 
-.positionCenter() {
-  left: 50%;
-  top:50%;
-  transform: translate(-50%,-50%);
-}
+
 

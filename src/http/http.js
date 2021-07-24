@@ -77,7 +77,7 @@ instance.interceptors.response.use(
   },
   (error) => {
     error && error.response && errorHandler(error.response.status);
-    return Promise.reject(error);
+    return error;
   }
 );
 
